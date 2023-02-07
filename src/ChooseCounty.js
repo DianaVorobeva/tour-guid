@@ -1,18 +1,8 @@
-import { useState } from "react";
-import CountryButtons from "./CountryButtons";
 import { data } from './data';
 
-
-
-function ChooseCountry() {
-  const [country, setCountry] = useState(0);
-  const {id,countryName,image} = data[country];
-  const [clickedId, setClickedId] = useState(data[country].id);
-
-
-  const prevCountry = (event) => {
-    const chosenId = event.target;
-    setClickedId(chosenId);
+function ChooseCountry({countryName,id,image,setCountry}) {
+  
+  const prevCountry = () => {
     setCountry(country => {
       country --;
       if(country < 0) {
@@ -36,11 +26,9 @@ function ChooseCountry() {
   return(
 
     <div className='wrapper'>
+  
       <div className='container'>
-        <CountryButtons chosenCountry={clickedId}/>
-      </div>
-      <div className='container'>
-        <img src={image} alt="country" width="500px"/>
+        <img src={image} alt="country" width="500px" height="650px"/>
       </div>
       <div className='container'>
           <h2>{id} - {countryName}</h2>

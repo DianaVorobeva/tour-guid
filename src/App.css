@@ -13,6 +13,27 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.link {
+  padding: 10px 20px;
+  margin-right: 70px;
+  margin-left: 70px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: black;
+  background-color: #98A8F8;
+  font-family: 'Montserrat', sans-serif;
+}
+.link:hover{
+  color: white;
+  transition: all ease-in-out 0.5s;
+}
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 35px;
@@ -59,7 +80,7 @@ h2 {
   flex-direction: row;
   justify-content: space-evenly;
   width: 50%;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .changeBtn {
@@ -71,6 +92,11 @@ h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 18px;
+}
+
+.changeBtn:hover{
+  color: white;
+  transition: all ease-in-out 0.5s;
 }
 
 .description {

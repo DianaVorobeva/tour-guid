@@ -2,9 +2,8 @@ import './App.css';
 import { useState } from 'react';
 import { data } from './data';
 
-function Attractions({countryId}) {
-const [attract, setAttract] = useState(data[countryId].places);
-console.log(attract);
+function Attractions({country,countryName}) {
+const [attract, setAttract] = useState(data[country].places);
 const [showText, setShowText] = useState(false);
 
 const removePlace = (id) => {
@@ -20,7 +19,7 @@ const showTextClick = (item) => {
 return (
     <div>
         <div className='container'>
-            <h1>{attract.length} Best Places to Visit in </h1>
+            <h1>{attract.length} Best Places to Visit in {countryName} </h1>
         </div>
         {attract.map((item => {
             const {id,attraction, description,city,image,source, showMore} = item;
