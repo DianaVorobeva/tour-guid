@@ -16,13 +16,18 @@ const showTextClick = (item) => {
     setShowText(!showText);
 }
 
+const jump = () => {
+    window.location.assign('http://localhost:3000/');
+    
+}
+
 return (
     <div>
         <div className='container'>
             <h1>{attract.length} Best Places to Visit in {countryName} </h1>
         </div>
         {attract.map((item => {
-            const {id,attraction, description,city,image,source, showMore} = item;
+            const {id,attraction, description,city,image,source,showMore} = item;
             return (
                 <div key={id}>
                     <div className='container'>
@@ -41,9 +46,13 @@ return (
                     <div className='container'>
                         <button className='removeBtn' onClick={() => removePlace(id)}>Remove</button>
                     </div>
+                    
                 </div>
             )
         }))}  
+        <div className='container'>
+        <button onClick={ jump} className="countryBtn">Back to choose counties</button>
+        </div>
     </div>
 )
 }

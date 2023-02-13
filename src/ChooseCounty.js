@@ -1,6 +1,6 @@
 import { data } from './data';
 
-function ChooseCountry({countryName,id,image,setCountry}) {
+function ChooseCountry({countryName,id,image,setCountry,showComponent,setShowComponent}) {
   
   const prevCountry = () => {
     setCountry(country => {
@@ -23,10 +23,20 @@ function ChooseCountry({countryName,id,image,setCountry}) {
     
   }
 
-  return(
+  const viewAttractions = (e) => {
+    e.preventDefault();
+    // window.location.assign('http://localhost:3000/attractions');
+    
+    setShowComponent(!showComponent);
 
+  }
+
+  return(
+    <div>
     <div className='wrapper'>
-  
+    <div className='container'>
+        <h1>Tourist attractions around the world!</h1>
+        </div>
       <div className='container'>
         <img src={image} alt="country" width="500px" height="650px"/>
       </div>
@@ -37,8 +47,13 @@ function ChooseCountry({countryName,id,image,setCountry}) {
           <button onClick={prevCountry} className="changeBtn">Previous</button>
           <button onClick={nextCountry} className="changeBtn">Next</button>
       </div>
+      
      
     </div>
+    <div className='container'>
+    <button onClick={viewAttractions} className="countryBtn">View attractions in {countryName}</button>
+  </div>
+  </div>
   )
 }
 

@@ -66,6 +66,8 @@ h2 {
   background-color: #EEF1FF;
   padding: 8px;
   border: 1px solid #BCCEF8;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .countryBtn:hover {
